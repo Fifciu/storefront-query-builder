@@ -305,6 +305,7 @@ export default class RequestBody {
               .aggregation('terms', this.getMapping(field), aggregationSize)
               .aggregation('terms', field + this.optionsPrefix, aggregationSize)
           } else {
+            console.log(attribute, 'trst')
             this.queryChain
               .aggregation('terms', field)
               .aggregation('range', 'price', config.priceFilters)
